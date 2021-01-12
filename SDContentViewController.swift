@@ -22,7 +22,6 @@ class SDContentViewController: NSViewController
         let name = NSTableView.selectionDidChangeNotification
         NotificationCenter.default.addObserver(forName: name, object: nil, queue: nil) { (note) in
             guard let table = note.object as? NSTableView else { return }
-            
             let row = table.selectedRow
             self.currentModule = row >= 0 ? SDModule.allCases[row] : nil
         }
